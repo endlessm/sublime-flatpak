@@ -1,0 +1,10 @@
+[Flatpak Ref]
+Title=Sublime
+Name=com.sublimetext.Sublime
+Branch=master
+Url=@URL@
+IsRuntime=False
+GPGKey=@GPG@
+Comment=Sublime
+Description=Sublime text editor
+Icon=https://upload.wikimedia.org/wikipedia/en/4/4c/Sublime_Text_Logo.png
