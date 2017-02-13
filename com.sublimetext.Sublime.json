@@ -44,21 +44,11 @@
                     "type": "file",
                     "path": "sublime-Makefile",
                     "dest-filename": "Makefile"
-                },
-                {
-                    "type": "file",
-                    "path": "open-uri-portal.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "mimeapps.list"
                 }
             ],
             "post-install": [
                 "mkdir -p /app/etc/xdg",
-                "cp mimeapps.list /app/etc/xdg",
-                "mkdir -p /app/share/applications",
-                "cp open-uri-portal.desktop /app/share/applications"
+                "mkdir -p /app/share/applications"
             ]
         }
     ]
