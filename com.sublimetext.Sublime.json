@@ -1,10 +1,10 @@
 {
-    "app-id": "com.sublimetext.Client",
+    "app-id": "com.sublimetext.Sublime",
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "1.4",
     "sdk": "org.freedesktop.Sdk",
-    "command": "subl",
     "branch": "1.4",
+    "command": "sublime",
     "separate-locales": false,
     "finish-args": [
         /* X11 + XShm access */
