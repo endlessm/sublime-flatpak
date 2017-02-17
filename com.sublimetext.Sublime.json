@@ -3,8 +3,8 @@
     "runtime": "org.freedesktop.Platform",
     "runtime-version": "1.4",
     "sdk": "org.freedesktop.Sdk",
-    "branch": "master",
     "command": "subl",
+    "branch": "1.4",
     "separate-locales": false,
     "finish-args": [
         /* X11 + XShm access */
