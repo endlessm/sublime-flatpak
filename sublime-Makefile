@@ -2,6 +2,9 @@ all:
 	true
 
 install:
+	mkdir -p /app/bin
+	mkdir -p /app/lib
 	install apply_extra /app/bin
 	install sublime.sh /app/bin/sublime
-	cp /usr/bin/subl /app/bin
+	cp /usr/bin/ar /app/bin
+	cp /usr/lib/libbfd-*.so /app/lib
