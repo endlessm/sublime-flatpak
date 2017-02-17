@@ -15,18 +15,6 @@
         "--talk-name=org.gnome.SettingsDaemon",
         "--extra-data=sublime.deb:f3f31634c05243e33a82a96e82c3cd691958057489e47eebe8ac3b0c0e6dd3b4:7746994::https://download.sublimetext.com/sublime-text_build-3126_amd64.deb"
     ],
-    "build-options" : {
-        "cflags": "-O2 -g",
-        "cxxflags": "-O2 -g",
-        "env": {
-            "V": "1"
-        }
-    },
-    "cleanup": ["/include", "/lib/pkgconfig",
-                "/share/pkgconfig", "/share/aclocal",
-                "/man", "/share/man", "/share/gtk-doc",
-                "/share/vala",
-                "*.la", "*.a"],
     "modules": [
         {
             "name": "sublime",
