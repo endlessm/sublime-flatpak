@@ -1,9 +1,9 @@
 {
     "app-id": "com.sublimetext.Sublime",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "1.4",
-    "sdk": "org.freedesktop.Sdk",
     "branch": "1.4",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.22",
+    "sdk": "org.gnome.Sdk",
     "command": "sublime",
     "separate-locales": false,
     "finish-args": [
