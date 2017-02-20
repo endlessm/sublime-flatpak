@@ -1,9 +1,9 @@
 {
     "app-id": "com.sublimetext.Sublime",
-    "branch": "1.4",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.22",
     "sdk": "org.gnome.Sdk",
+    "branch": "1.0",
     "command": "sublime",
     "separate-locales": false,
     "finish-args": [
