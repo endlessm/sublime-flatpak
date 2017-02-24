@@ -13,4 +13,4 @@ build: $(MANIFEST)
 								$(MANIFEST)
 
 clean:
-	rm -rf sublime
+	rm -rf sublime repo .flatpak-builder
