@@ -1,6 +1,6 @@
 [Flatpak Ref]
 Title=Sublime
-Name=com.sublimetext.Sublime
+Name=com.sublimetext.three
 Branch=master
 Url=@URL@
 IsRuntime=False

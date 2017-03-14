@@ -1,7 +1,7 @@
 BUILDER_OPTIONS = --force-clean --ccache --require-changes
 TARGET_REPO = repo
 FLATPAK_BUILDER = $(shell which flatpak-builder)
-MANIFEST = com.sublimetext.Sublime.json
+MANIFEST = com.sublimetext.three.json
 
 all: build
 
