@@ -1,6 +1,6 @@
 {
     "app-id": "com.sublimetext.three",
-    "runtime": "org.gnome.Platform",
+    "runtime": "org.gnome.Sdk",
     "runtime-version": "3.22",
     "sdk": "org.gnome.Sdk",
     "branch": "1.0",
