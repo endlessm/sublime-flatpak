@@ -21,6 +21,16 @@
     ],
     "modules": [
         {
+            "name": "nodejs",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://nodejs.org/dist/v6.10.0/node-v6.10.0.tar.gz",
+                    "sha256": "01dae00dc0faa37a4b7a84098e2f04631827fc42e319eb66ccc3ab1d561ea42d"
+                }
+            ]
+        },
+        {
             "name": "sublime",
             "no-autogen": true,
             "sources" : [
