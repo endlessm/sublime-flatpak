@@ -1,6 +1,6 @@
 {
     "app-id": "com.sublimetext.three",
-    "runtime": "org.gnome.Platform",
+    "runtime": "org.gnome.Sdk",
     "runtime-version": "3.22",
     "sdk": "org.gnome.Sdk",
     "branch": "1.0",
@@ -13,9 +13,61 @@
         "--share=network",
         /* Media keys: */
         "--talk-name=org.gnome.SettingsDaemon",
-        "--extra-data=sublime.deb:f3f31634c05243e33a82a96e82c3cd691958057489e47eebe8ac3b0c0e6dd3b4:7746994::https://download.sublimetext.com/sublime-text_build-3126_amd64.deb"
+        /* Not much use if you can't edit files */
+        "--filesystem=home",
+        "--filesystem=host:ro",
+        "--extra-data=sublime.deb:f3f31634c05243e33a82a96e82c3cd691958057489e47eebe8ac3b0c0e6dd3b4:7746994::https://download.sublimetext.com/sublime-text_build-3126_amd64.deb",
+        "--extra-data=Package Control.sublime-package:df21e130d211cfc94d9b0905775a7c0f1e3d39e33b79698005270310898eea76:275309::http://packagecontrol.io/Package%20Control.sublime-package"
     ],
     "modules": [
+        {
+            "name": "python3-pep8",
+            "no-autogen": true,
+            "post-install": [
+                "pip3.4 install --target=/app/lib/python3.4/site-packages pep8-1.7.0-py2.py3-none-any.whl"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://pypi.python.org/packages/8a/cb/7d0fdca7e03f997945fb1bd60a8ddfea5c51229b865c470b4f7a64619d20/pep8-1.7.0-py2.py3-none-any.whl",
+                    "sha256": "4fc2e478addcf17016657dff30b2d8d611e8341fac19ccf2768802f6635d7b8a"
+                },
+                {
+                    "type": "file",
+                    "path": "fakefile",
+                    "dest-filename": "Makefile"
+                }
+            ]
+        },
+        {
+            "name": "python3-pyflakes",
+            "no-autogen": true,
+            "post-install": [
+                "pip3.4 install --target=/app/lib/python3.4/site-packages pyflakes-1.5.0-py2.py3-none-any.whl"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://pypi.python.org/packages/27/49/924098b3b85c286696f37e014475d79471ffc44509613af420645a3c12cb/pyflakes-1.5.0-py2.py3-none-any.whl",
+                    "sha256": "cc5eadfb38041f8366128786b4ca12700ed05bbf1403d808e89d57d67a3875a7"
+                },
+                {
+                    "type": "file",
+                    "path": "fakefile",
+                    "dest-filename": "Makefile"
+                }
+            ]
+        },
+        {
+            "name": "nodejs",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://nodejs.org/dist/v6.10.0/node-v6.10.0.tar.gz",
+                    "sha256": "01dae00dc0faa37a4b7a84098e2f04631827fc42e319eb66ccc3ab1d561ea42d"
+                }
+            ]
+        },
         {
             "name": "sublime",
             "no-autogen": true,
