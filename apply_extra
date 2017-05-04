@@ -7,6 +7,7 @@ mv usr/* .
 rmdir usr
 mkdir -p export/share/applications
 sed s/Icon=sublime-text/Icon=com.sublimetext.three/ share/applications/sublime_text.desktop > export/share/applications/com.sublimetext.three.desktop
+sed -i 's:Exec=/opt/sublime_text/sublime_text:Exec=sublime:' export/share/applications/com.sublimetext.three.desktop
 mkdir -p export/share/icons/hicolor/256x256/apps
 cp share/icons/hicolor/256x256/apps/sublime-text.png export/share/icons/hicolor/256x256/apps/com.sublimetext.three.png
 sed -i 's:/opt/sublime_text/sublime_text:/app/extra/opt/sublime_text/sublime_text:' /app/extra/bin/subl
