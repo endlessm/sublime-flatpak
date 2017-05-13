@@ -7,13 +7,9 @@
     "command": "sublime",
     "separate-locales": false,
     "finish-args": [
-        /* X11 + XShm access */
         "--share=ipc", "--socket=x11",
-        /* Network access */
         "--share=network",
-        /* Media keys: */
         "--talk-name=org.gnome.SettingsDaemon",
-        /* Not much use if you can't edit files */
         "--filesystem=home",
         "--filesystem=host:ro",
         "--extra-data=sublime.deb:f3f31634c05243e33a82a96e82c3cd691958057489e47eebe8ac3b0c0e6dd3b4:7746994::https://download.sublimetext.com/sublime-text_build-3126_amd64.deb",
