@@ -12,8 +12,8 @@
         "--talk-name=org.gnome.SettingsDaemon",
         "--filesystem=home",
         "--filesystem=host:ro",
-        "--extra-data=sublime.deb:f3f31634c05243e33a82a96e82c3cd691958057489e47eebe8ac3b0c0e6dd3b4:7746994::https://download.sublimetext.com/sublime-text_build-3126_amd64.deb",
-        "--extra-data=Package Control.sublime-package:df21e130d211cfc94d9b0905775a7c0f1e3d39e33b79698005270310898eea76:275309::http://packagecontrol.io/Package%20Control.sublime-package"
+        "--extra-data=sublime.deb:ecd78f6fd3a61dc2d68725a368343589d8df4193434c0275cd49b2026fd0fb81:8190414::https://download.sublimetext.com/files/sublime-text_build-3143_amd64.deb",
+        "--extra-data=Package Control.sublime-package:6f4c264a24d933ce70df5dedcf1dcaeeebe013ee18cced0ef93d5f746d80ef60:286331::http://packagecontrol.io/Package%20Control.sublime-package"
     ],
     "modules": [
         {
