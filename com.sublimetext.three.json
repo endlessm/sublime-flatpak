@@ -1,7 +1,7 @@
 {
     "app-id": "com.sublimetext.three",
     "runtime": "org.gnome.Sdk",
-    "runtime-version": "3.22",
+    "runtime-version": "3.24",
     "sdk": "org.gnome.Sdk",
     "branch": "1.0",
     "command": "sublime",
@@ -12,15 +12,15 @@
         "--talk-name=org.gnome.SettingsDaemon",
         "--filesystem=home",
         "--filesystem=host:ro",
-        "--extra-data=sublime.deb:f3f31634c05243e33a82a96e82c3cd691958057489e47eebe8ac3b0c0e6dd3b4:7746994::https://download.sublimetext.com/sublime-text_build-3126_amd64.deb",
-        "--extra-data=Package Control.sublime-package:df21e130d211cfc94d9b0905775a7c0f1e3d39e33b79698005270310898eea76:275309::http://packagecontrol.io/Package%20Control.sublime-package"
+        "--extra-data=sublime.deb:ecd78f6fd3a61dc2d68725a368343589d8df4193434c0275cd49b2026fd0fb81:8190414::https://download.sublimetext.com/files/sublime-text_build-3143_amd64.deb",
+        "--extra-data=Package Control.sublime-package:6f4c264a24d933ce70df5dedcf1dcaeeebe013ee18cced0ef93d5f746d80ef60:286331::http://packagecontrol.io/Package%20Control.sublime-package"
     ],
     "modules": [
         {
             "name": "python3-pep8",
             "no-autogen": true,
             "post-install": [
-                "pip3.4 install --target=/app/lib/python3.4/site-packages pep8-1.7.0-py2.py3-none-any.whl"
+                "pip3.5 install --target=/app/lib/python3.5/site-packages pep8-1.7.0-py2.py3-none-any.whl"
             ],
             "sources": [
                 {
@@ -39,7 +39,7 @@
             "name": "python3-pyflakes",
             "no-autogen": true,
             "post-install": [
-                "pip3.4 install --target=/app/lib/python3.4/site-packages pyflakes-1.5.0-py2.py3-none-any.whl"
+                "pip3.5 install --target=/app/lib/python3.5/site-packages pyflakes-1.5.0-py2.py3-none-any.whl"
             ],
             "sources": [
                 {
