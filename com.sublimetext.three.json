@@ -18,39 +18,29 @@
     "modules": [
         {
             "name": "python3-pep8",
-            "no-autogen": true,
-            "post-install": [
-                "pip3.5 install --target=/app/lib/python3.5/site-packages pep8-1.7.0-py2.py3-none-any.whl"
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3.5 install --prefix=/app pep8-1.7.0-py2.py3-none-any.whl"
             ],
             "sources": [
                 {
                     "type": "file",
                     "url": "https://pypi.python.org/packages/8a/cb/7d0fdca7e03f997945fb1bd60a8ddfea5c51229b865c470b4f7a64619d20/pep8-1.7.0-py2.py3-none-any.whl",
                     "sha256": "4fc2e478addcf17016657dff30b2d8d611e8341fac19ccf2768802f6635d7b8a"
-                },
-                {
-                    "type": "file",
-                    "path": "fakefile",
-                    "dest-filename": "Makefile"
                 }
             ]
         },
         {
             "name": "python3-pyflakes",
-            "no-autogen": true,
-            "post-install": [
-                "pip3.5 install --target=/app/lib/python3.5/site-packages pyflakes-1.5.0-py2.py3-none-any.whl"
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3.5 install --prefix=/app pyflakes-1.5.0-py2.py3-none-any.whl"
             ],
             "sources": [
                 {
                     "type": "file",
                     "url": "https://pypi.python.org/packages/27/49/924098b3b85c286696f37e014475d79471ffc44509613af420645a3c12cb/pyflakes-1.5.0-py2.py3-none-any.whl",
                     "sha256": "cc5eadfb38041f8366128786b4ca12700ed05bbf1403d808e89d57d67a3875a7"
-                },
-                {
-                    "type": "file",
-                    "path": "fakefile",
-                    "dest-filename": "Makefile"
                 }
             ]
         },
@@ -66,7 +56,7 @@
         },
         {
             "name": "sublime",
-            "no-autogen": true,
+            "buildsystem": "simple",
             "sources" : [
                 {
                     "type": "file",
@@ -75,12 +65,15 @@
                 {
                     "type": "file",
                     "path": "sublime.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "sublime-Makefile",
-                    "dest-filename": "Makefile"
                 }
+            ],
+            "build-commands": [
+                "mkdir -p /app/bin",
+                "mkdir -p /app/lib",
+                "install apply_extra /app/bin",
+                "install sublime.sh /app/bin/sublime",
+                "cp /usr/bin/ar /app/bin",
+                "cp /usr/lib/libbfd-*.so /app/lib"
             ],
             "post-install": [
                 "mkdir -p /app/etc/xdg",
