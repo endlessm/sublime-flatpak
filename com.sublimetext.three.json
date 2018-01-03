@@ -45,6 +45,32 @@
             ]
         },
         {
+            "name": "python3-yamllint",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3.5 install --prefix=/app pathspec-0.5.5.tar.gz",
+                "pip3.5 install --prefix=/app PyYAML-3.12.tar.gz",
+                "pip3.5 install --prefix=/app yamllint-1.10.0-py2.py3-none-any.whl"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://pypi.python.org/packages/9f/fb/5a901a3b1eeebf83af6da74ecca69d7daf5189e450f0f4cccf9c19132651/pathspec-0.5.5.tar.gz",
+                    "sha256": "72c495d1bbe76674219e307f6d1c6062f2e1b0b483a5e4886435127d0df3d0d3"
+                },
+                {
+                    "type": "file",
+                    "url": "https://pypi.python.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz",
+                    "sha256": "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+                },
+                {
+                    "type": "file",
+                    "url": "https://pypi.python.org/packages/33/2d/3d4a3877163a7ac2edda327f3139694c47a97f8bfb37cadef93f895e352c/yamllint-1.10.0-py2.py3-none-any.whl",
+                    "sha256": "c4f82ffea8a9941e42e41949ad0e2cbad8261e426197a29f03110b5823d77164"
+                }
+            ]
+        },
+        {
             "name": "nodejs",
             "sources": [
                 {
