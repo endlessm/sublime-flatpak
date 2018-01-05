@@ -1,7 +1,7 @@
 {
     "app-id": "com.sublimetext.three",
     "runtime": "org.gnome.Sdk",
-    "runtime-version": "3.24",
+    "runtime-version": "3.26",
     "sdk": "org.gnome.Sdk",
     "branch": "1.0",
     "command": "sublime",
@@ -17,40 +17,56 @@
     ],
     "modules": [
         {
-            "name": "python3-pep8",
-            "no-autogen": true,
-            "post-install": [
-                "pip3.5 install --target=/app/lib/python3.5/site-packages pep8-1.7.0-py2.py3-none-any.whl"
+            "name": "python3-pycodestyle",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3.5 install --prefix=/app pycodestyle-2.3.1-py2.py3-none-any.whl"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://pypi.python.org/packages/8a/cb/7d0fdca7e03f997945fb1bd60a8ddfea5c51229b865c470b4f7a64619d20/pep8-1.7.0-py2.py3-none-any.whl",
-                    "sha256": "4fc2e478addcf17016657dff30b2d8d611e8341fac19ccf2768802f6635d7b8a"
-                },
-                {
-                    "type": "file",
-                    "path": "fakefile",
-                    "dest-filename": "Makefile"
+                    "url": "https://pypi.python.org/packages/e4/81/78fe51eb4038d1388b7217dd63770b0f428370207125047312886c923b26/pycodestyle-2.3.1-py2.py3-none-any.whl",
+                    "sha256": "6c4245ade1edfad79c3446fadfc96b0de2759662dc29d07d80a6f27ad1ca6ba9"
                 }
             ]
         },
         {
             "name": "python3-pyflakes",
-            "no-autogen": true,
-            "post-install": [
-                "pip3.5 install --target=/app/lib/python3.5/site-packages pyflakes-1.5.0-py2.py3-none-any.whl"
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3.5 install --prefix=/app pyflakes-1.5.0-py2.py3-none-any.whl"
             ],
             "sources": [
                 {
                     "type": "file",
                     "url": "https://pypi.python.org/packages/27/49/924098b3b85c286696f37e014475d79471ffc44509613af420645a3c12cb/pyflakes-1.5.0-py2.py3-none-any.whl",
                     "sha256": "cc5eadfb38041f8366128786b4ca12700ed05bbf1403d808e89d57d67a3875a7"
+                }
+            ]
+        },
+        {
+            "name": "python3-yamllint",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3.5 install --prefix=/app pathspec-0.5.5.tar.gz",
+                "pip3.5 install --prefix=/app PyYAML-3.12.tar.gz",
+                "pip3.5 install --prefix=/app yamllint-1.10.0-py2.py3-none-any.whl"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://pypi.python.org/packages/9f/fb/5a901a3b1eeebf83af6da74ecca69d7daf5189e450f0f4cccf9c19132651/pathspec-0.5.5.tar.gz",
+                    "sha256": "72c495d1bbe76674219e307f6d1c6062f2e1b0b483a5e4886435127d0df3d0d3"
                 },
                 {
                     "type": "file",
-                    "path": "fakefile",
-                    "dest-filename": "Makefile"
+                    "url": "https://pypi.python.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz",
+                    "sha256": "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+                },
+                {
+                    "type": "file",
+                    "url": "https://pypi.python.org/packages/33/2d/3d4a3877163a7ac2edda327f3139694c47a97f8bfb37cadef93f895e352c/yamllint-1.10.0-py2.py3-none-any.whl",
+                    "sha256": "c4f82ffea8a9941e42e41949ad0e2cbad8261e426197a29f03110b5823d77164"
                 }
             ]
         },
@@ -66,7 +82,7 @@
         },
         {
             "name": "sublime",
-            "no-autogen": true,
+            "buildsystem": "simple",
             "sources" : [
                 {
                     "type": "file",
@@ -75,12 +91,15 @@
                 {
                     "type": "file",
                     "path": "sublime.sh"
-                },
-                {
-                    "type": "file",
-                    "path": "sublime-Makefile",
-                    "dest-filename": "Makefile"
                 }
+            ],
+            "build-commands": [
+                "mkdir -p /app/bin",
+                "mkdir -p /app/lib",
+                "install apply_extra /app/bin",
+                "install sublime.sh /app/bin/sublime",
+                "cp /usr/bin/ar /app/bin",
+                "cp /usr/lib/libbfd-*.so /app/lib"
             ],
             "post-install": [
                 "mkdir -p /app/etc/xdg",
