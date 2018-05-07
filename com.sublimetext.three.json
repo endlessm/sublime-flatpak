@@ -72,11 +72,20 @@
         },
         {
             "name": "nodejs",
+            "cleanup": [
+                "/include",
+                "/share",
+                "/app/lib/node_modules/npm/changelogs",
+                "/app/lib/node_modules/npm/doc",
+                "/app/lib/node_modules/npm/html",
+                "/app/lib/node_modules/npm/man",
+                "/app/lib/node_modules/npm/scripts"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://nodejs.org/dist/v6.10.0/node-v6.10.0.tar.gz",
-                    "sha256": "01dae00dc0faa37a4b7a84098e2f04631827fc42e319eb66ccc3ab1d561ea42d"
+                    "url": "https://nodejs.org/dist/v8.9.2/node-v8.9.2.tar.gz",
+                    "sha256": "8038fa61ac4562786fcc6d3229f3caa07a864b94bd5922fe75942a38ea1c3a3b"
                 }
             ]
         },
