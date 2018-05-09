@@ -3,7 +3,7 @@
     "runtime": "org.gnome.Sdk",
     "runtime-version": "3.28",
     "sdk": "org.gnome.Sdk",
-    "branch": "1.0",
+    "branch": "eos3",
     "command": "sublime",
     "separate-locales": false,
     "finish-args": [
