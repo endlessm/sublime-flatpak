@@ -108,12 +108,34 @@
             "buildsystem": "simple",
             "sources" : [
                 {
-                    "type": "file",
-                    "path": "apply_extra"
+                    "type": "script",
+                    "dest-filename": "apply_extra",
+                    "commands": [
+                        "ar x sublime.deb",
+                        "rm -f sublime.deb",
+                        "tar xf data.tar.lzma",
+                        "rm -f control.tar.gz data.tar.lzma debian-binary",
+                        "mv usr/* .",
+                        "rmdir usr",
+                        "mkdir -p export/share/applications",
+                        "sed s/Icon=sublime-text/Icon=com.sublimetext.three/ share/applications/sublime_text.desktop > export/share/applications/com.sublimetext.three.desktop",
+                        "sed -i 's:Exec=/opt/sublime_text/sublime_text:Exec=sublime:' export/share/applications/com.sublimetext.three.desktop",
+                        "mkdir -p export/share/icons/hicolor/256x256/apps",
+                        "cp share/icons/hicolor/256x256/apps/sublime-text.png export/share/icons/hicolor/256x256/apps/com.sublimetext.three.png",
+                        "sed -i 's:/opt/sublime_text/sublime_text:/app/extra/opt/sublime_text/sublime_text:' /app/extra/bin/subl"
+                    ]
                 },
                 {
-                    "type": "file",
-                    "path": "sublime.sh"
+                    "type": "script",
+                    "dest-filename": "sublime.sh",
+                    "commands": [
+                        "PCFILE=\"Package Control.sublime-package\"",
+                        "PCLOCATION=\"$HOME/.var/app/com.sublimetext.three/config/sublime-text-3/Installed Packages\"",
+                        "if ! test -f \"$PCLOCATION/$PCFILE\"; then",
+                        "    cp \"/app/extra/$PCFILE\" \"$PCLOCATION\"",
+                        "fi",
+                        "exec /app/extra/bin/subl"
+                    ]
                 },
                 {
                     "type": "extra-data",
